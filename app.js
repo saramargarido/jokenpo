@@ -18,34 +18,26 @@ function game(userMove) {
         case 'rockButtonrock':
         case 'paperButtonpaper':
         case 'scissorsButtonscissors':
-            console.log('EMPATE!!!!')
+            result.innerText = userMove + " (user) empata com " + computerMove + " (comp)!"
             break
+
         case 'rockButtonpaper':
         case 'paperButtonscissors':
         case 'scissorsButtonrock':
-            console.log('Computador ganhou')
+            result.innerText = userMove + " (user) perde de " + computerMove + " (comp)!"
+            addComputerScore++
+            compScore_span.innerHTML = addComputerScore
             break
+            
         case 'rockButtonscissors':
         case 'paperButtonrock':
         case 'scissorsButtonpaper':
-            console.log('Player ganhou')
+            result.innerText = userMove + " (user) ganha de " + computerMove + " (comp)!"
+            addUserScore++
+            userScore_span.innerHTML = addUserScore
             break
     }
 
-
-//     const expr = 'Papayas';
-// switch (expr) {
-//   case 'Oranges':
-//     console.log('Oranges are $0.59 a pound.');
-//     break;
-//   case 'Mangoes':
-//   case 'Papayas':
-//     console.log('Mangoes and papayas are $2.79 a pound.');
-//     // expected output: "Mangoes and papayas are $2.79 a pound."
-//     break;
-//   default:
-//     console.log(`Sorry, we are out of ${expr}.`);
-// }
 }
 
 paperButton_img.addEventListener("click", () => game("paperButton") )
