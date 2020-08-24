@@ -38,8 +38,7 @@ function game(userMove) {
             break
 
         case 'restart' + computerMove:
-            userScore_span.innerHTML = 0
-            compScore_span.innerHTML = 0
+            window.location.reload()
             break
     }
 
