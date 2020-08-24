@@ -7,39 +7,46 @@ const result_p = document.querySelector("#result")
 const paperButton_img = document.querySelector("#paperButton")
 const rockButton_img = document.querySelector("#rockButton")
 const scissorsButton_img = document.querySelector("#scissorsButton")
+const restart = document.querySelector("#restart")
 
 function game(userMove) {
-    moves = ["rock", "paper", "scissors"]
+    moves = ["pedra", "papel", "tesoura"]
     n = Math.floor(Math.random() * 3)
     computerMove = moves[n]
 
-    console.log (userMove + computerMove)
     switch(userMove + computerMove) {
-        case 'rockButtonrock':
-        case 'paperButtonpaper':
-        case 'scissorsButtonscissors':
+        case 'Pedrapedra':
+        case 'Papelpapel':
+        case 'Tesouratesoura':
             result.innerText = userMove + " (user) empata com " + computerMove + " (comp)!"
             break
 
-        case 'rockButtonpaper':
-        case 'paperButtonscissors':
-        case 'scissorsButtonrock':
+        case 'Pedrapapel':
+        case 'Papeltesoura':
+        case 'Tesourapedra':
             result.innerText = userMove + " (user) perde de " + computerMove + " (comp)!"
             addComputerScore++
             compScore_span.innerHTML = addComputerScore
             break
             
-        case 'rockButtonscissors':
-        case 'paperButtonrock':
-        case 'scissorsButtonpaper':
+        case 'Pedratesoura':
+        case 'Papelpedra':
+        case 'Tesourapapel':
             result.innerText = userMove + " (user) ganha de " + computerMove + " (comp)!"
             addUserScore++
             userScore_span.innerHTML = addUserScore
             break
+
+        case 'restart' + computerMove:
+            userScore_span.innerHTML = 0
+            compScore_span.innerHTML = 0
+            break
     }
+
 
 }
 
-paperButton_img.addEventListener("click", () => game("paperButton") )
-rockButton_img.addEventListener("click", () => game("rockButton") )
-scissorsButton_img.addEventListener("click", () => game("scissorsButton") )
+restart.addEventListener("click", () => game('restart'))
+paperButton_img.addEventListener("click", () => game("Papel") )
+rockButton_img.addEventListener("click", () => game("Pedra") )
+scissorsButton_img.addEventListener("click", () => game("Tesoura") )

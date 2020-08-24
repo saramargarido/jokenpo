@@ -103,6 +103,22 @@ footer {
     font-weight: bold;
 }
 
+button {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 30px;
+    border: none;
+    background-color: #31b43a;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #53c95b;
+    cursor: pointer;
+    transition: 300ms;
+}
+
 /* feedbacks resultado */
 .green-glow {
     border: 4px solid #4dcc7d !important;
